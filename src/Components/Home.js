@@ -1,21 +1,13 @@
-import React from 'react'
+import React from "react";
 
-import Dashboard from './Dashboard'
-import LandingPage from './LandingPage'
+import Dashboard from "./Dashboard";
+import LandingPage from "./LandingPage";
 
-import auth from '../services/authService'
-
+import auth from "../services/authService";
 
 function Home() {
-const isAuthenticated = auth.isAuthenticated();
-  return (
-       isAuthenticated
-        ? (
-            <Dashboard />
-        ) : (
-          <LandingPage />   
-        )  
-  );
+    const isAuthenticated = auth.isAuthenticated();
+    return isAuthenticated ? <Dashboard /> : <LandingPage />;
 }
 
-export default Home
+export default Home;
